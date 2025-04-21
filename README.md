@@ -3,6 +3,7 @@
 AcademicRise, bireylerin akademik gelişimini desteklemeyi amaçlayan TEMSİLİ olan dijital bir eğitim platformudur.  
 Bu projede, kullanıcıların platform hakkında canlı olarak bilgi alabileceği Flask tabanlı bir yapay zeka destekli sohbet asistanı geliştirilmiştir.
 
+
 ---
 
 ## 🚀 Özellikler
@@ -15,3 +16,5 @@ Bu projede, kullanıcıların platform hakkında canlı olarak bilgi alabileceğ
 
 ---
 
+
+![Chatbot Görseli](image.png)
