@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>AcademicRise - Sohbet Asistanı</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f1f5f9;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .chat-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-height: 500px;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .message {
+      padding: 12px 18px;
+      border-radius: 18px;
+      max-width: 70%;
+      word-wrap: break-word;
+      font-size: 15px;
+      line-height: 1.5;
+      position: relative;
+    }
+
+    .user {
+      background-color: #d6ecff; /* Açık mavi */
+      align-self: flex-end;
+      text-align: right;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot {
+      background-color: #ffe0ef; /* Açık pembe */
+      align-self: flex-start;
+      text-align: left;
+      border-bottom-left-radius: 0;
+    }
+
+    .message strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #4a90e2;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357abd;
+    }
+
+    /* Scrollbar özelleştirmesi */
+    .chat-box::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .chat-box::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🎓AcademicRise Sohbet Asistanı 💬</h2>
+    <div class="chat-box">
+      {% for msg in conversation %}
+        <div class="message {% if msg.sender == 'Müşteri' %}user{% else %}bot{% endif %}">
+          <strong>{{ msg.sender }}</strong>
+          {{ msg.message }}
+        </div>
+      {% endfor %}
+    </div>
+    <form method="post">
+      <input type="text" name="user_input" placeholder="Sorunuzu buraya yazın..." autocomplete="off" required>
+      <button type="submit">Gönder</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+  
