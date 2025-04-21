@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 #api anahtarını çağır
 
-genai.configure(api_key = "AIzaSyAJBUIWltkjwmlKvI-f1xiUv6nXzkTHVMU") 
+genai.configure(api_key = "API KEY") 
 
 generation_config = {
     "temperature": 1,
